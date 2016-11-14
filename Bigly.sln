@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.Infrastructure", "Bigly.Infrastructure\Bigly.Infrastructure.csproj", "{54DA1AE6-2C1C-47FC-9E45-B085D8766F50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.Domain.Models", "Bigly.Core.Models\Bigly.Domain.Models.csproj", "{6A151D69-30FF-40F0-9ABE-F1CFF3DB3724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.Domain.Services", "Bigly.Core.Services\Bigly.Domain.Services.csproj", "{6BFBFDE3-7784-4967-A9FB-E54D8D05DEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.DAL", "Bigly.DAL\Bigly.DAL.csproj", "{B8475BCC-90E7-41B3-B97D-8A6938EAE93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.Api.ViewModels", "Bigly.Api.ViewModels\Bigly.Api.ViewModels.csproj", "{37541FED-FF51-4E15-90BC-EFF55F5EB08F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.Api.Services", "Bigly.Api.Services\Bigly.Api.Services.csproj", "{8738D3A9-9DE2-4E9B-821B-DB0B60B6FEFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigly.API", "Bigly.Api\Bigly.API.csproj", "{7195BA9C-F838-43F5-BB5E-CCF14DB09CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54DA1AE6-2C1C-47FC-9E45-B085D8766F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DA1AE6-2C1C-47FC-9E45-B085D8766F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DA1AE6-2C1C-47FC-9E45-B085D8766F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DA1AE6-2C1C-47FC-9E45-B085D8766F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A151D69-30FF-40F0-9ABE-F1CFF3DB3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A151D69-30FF-40F0-9ABE-F1CFF3DB3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A151D69-30FF-40F0-9ABE-F1CFF3DB3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A151D69-30FF-40F0-9ABE-F1CFF3DB3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BFBFDE3-7784-4967-A9FB-E54D8D05DEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFBFDE3-7784-4967-A9FB-E54D8D05DEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFBFDE3-7784-4967-A9FB-E54D8D05DEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFBFDE3-7784-4967-A9FB-E54D8D05DEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8475BCC-90E7-41B3-B97D-8A6938EAE93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8475BCC-90E7-41B3-B97D-8A6938EAE93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8475BCC-90E7-41B3-B97D-8A6938EAE93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8475BCC-90E7-41B3-B97D-8A6938EAE93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37541FED-FF51-4E15-90BC-EFF55F5EB08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37541FED-FF51-4E15-90BC-EFF55F5EB08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37541FED-FF51-4E15-90BC-EFF55F5EB08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37541FED-FF51-4E15-90BC-EFF55F5EB08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8738D3A9-9DE2-4E9B-821B-DB0B60B6FEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8738D3A9-9DE2-4E9B-821B-DB0B60B6FEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8738D3A9-9DE2-4E9B-821B-DB0B60B6FEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8738D3A9-9DE2-4E9B-821B-DB0B60B6FEFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7195BA9C-F838-43F5-BB5E-CCF14DB09CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7195BA9C-F838-43F5-BB5E-CCF14DB09CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7195BA9C-F838-43F5-BB5E-CCF14DB09CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7195BA9C-F838-43F5-BB5E-CCF14DB09CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
