@@ -4,11 +4,11 @@ using Driveme.Domain.Services.Factories;
 
 namespace Bigly.Api.Services
 {
-    public interface IBaseAppService
+    public interface IBaseApiService
     {
     }
 
-    public abstract class BaseApiService<T> : IBaseAppService where T:Entity, IAggregateRoot, new()
+    public abstract class BaseApiService<T> : IBaseApiService where T:Entity, IAggregateRoot, new()
     {
         protected IBaseFactory<T> factory;
         protected IRepository<T> repository;

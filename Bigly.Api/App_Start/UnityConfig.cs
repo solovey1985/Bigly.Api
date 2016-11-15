@@ -18,7 +18,7 @@ namespace Bigly.Api
             container.RegisterTypes(AllClasses.FromLoadedAssemblies(),
                 WithMappings.FromMatchingInterface,
                 WithName.Default,
-                WithLifetime.ContainerControlled);
+                WithLifetime.Hierarchical);
 
            GlobalConfiguration.Configuration.DependencyResolver = new  UnityDependencyResolver(container);
         }

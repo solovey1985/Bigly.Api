@@ -20,7 +20,7 @@ namespace Bigly.DAL.Contexts
             modelBuilder.Entity<Employee>().HasRequired(e => e.Rate)
                 .WithMany(r => r.Employees).HasForeignKey(e => e.RateId);
             modelBuilder.Entity<Employee>().HasOptional(e => e.Salaries);
-            modelBuilder.Entity<Employee>().HasMany<Salary>(p => p.Salaries);
+            modelBuilder.Entity<Employee>().HasMany(p => p.Salaries);
             
 
             modelBuilder.Entity<Rate>().HasKey(r => r.Id);

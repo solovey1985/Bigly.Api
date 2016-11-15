@@ -24,6 +24,7 @@ namespace Bigly.Infrastructure
 
         public virtual IEnumerable<TEntity> GetAll()
         {
+            
             return _dbSet.ToList();
         }
 

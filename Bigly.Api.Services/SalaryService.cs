@@ -23,6 +23,12 @@ namespace Bigly.Api.Services
             
         }
 
+        public IEnumerable<SalaryViewModel> GetAllWithEmployees()
+        {
+            List<Salary> domainModels = _salaryRepository.GetAllWithEmployees().ToList();
+
+            return domainModels.Select(Mapper.Map<SalaryViewModel>).ToList();
+        } 
         public IEnumerable<SalaryViewModel> GetPerMonthByEmloyeeId(int employeeId)
         {
             List<Salary> domainModels = _salaryRepository.GetAll().ToList();

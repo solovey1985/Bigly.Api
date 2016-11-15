@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Bigly.Api.Services.Interfaces;
+using Bigly.Api.ViewModels;
 using Bigly.DAL.Repositories;
 using Bigly.Domain.Models;
 using Driveme.Domain.Services.Factories;
 
 namespace Bigly.Api.Services
 {
-    public class EmployeeService:BaseApiService<Employee>
+    public class EmployeeService:BaseApiService<Employee>, IEmployeeService
     {
         EmployeeFactory employeeFactory;
         public EmployeeService(BaseFactory<Employee> factory) : base(factory, new EmployeeRepository())
@@ -14,9 +16,9 @@ namespace Bigly.Api.Services
             employeeFactory = new EmployeeFactory();
         }
 
-        public IEnumerable<Employee> GetAll()
+        public IEnumerable<EmployeeViewModel> GetAll()
         {
-            return repository.GetAll();
+            throw new NotImplementedException();
         }
 
         public Employee GetById(int id)

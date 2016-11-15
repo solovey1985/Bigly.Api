@@ -22,8 +22,8 @@ namespace Bigly.Api.Controllers
 
         public IEnumerable<SalaryViewModel> Get()
         {
-            List<SalaryViewModel> salriesPerMonth = _salaryService.GetPerMonth().ToList();
-            return salriesPerMonth;
+            List<SalaryViewModel> allSalaries = _salaryService.GetAllWithEmployees().ToList();
+            return allSalaries;
         }
 
         public IEnumerable<SalaryViewModel> Get(int employeeId)
@@ -32,16 +32,16 @@ namespace Bigly.Api.Controllers
             return salriesPerMonth;
         }
 
-        public SalaryViewModel Put(SalaryViewModel salaryToUpdate)
+        public List<SalaryViewModel> Put([FromBody] List<SalaryViewModel> models)
         {
-            _salaryService.Update(salaryToUpdate);
-            return salaryToUpdate;
+            _salaryService.BatchUpdate(models.ToList());
+            return models.ToList();
         }
 
-        public IEnumerable<SalaryViewModel> Post(List<SalaryViewModel> salariesToUpdate)
+        public IEnumerable<SalaryViewModel> Post([FromBody] List<SalaryViewModel> salariesToCreate)
         {
-            _salaryService.BatchUpdate(salariesToUpdate);
-            return salariesToUpdate;
+            _salaryService.BatchUpdate(salariesToCreate);
+            return salariesToCreate;
         }  
     }
 }
