@@ -11,6 +11,8 @@ namespace Bigly.DAL.Repositories
     public interface ISalaryRepository: IRepository<Salary>
     {
         IEnumerable<Salary> GetAllWithEmployees();
+
+        bool BatchUpdate(List<Salary> salariesToUpdate);
     }
     public class SalaryRepository:Repository<Salary, SalaryContext>, ISalaryRepository
     {
@@ -24,6 +26,21 @@ namespace Bigly.DAL.Repositories
         public IEnumerable<Salary> GetAllWithEmployees()
         {
             return  _dbSet.Include(s => s.Employee).ToList();
+        }
+
+        public bool BatchUpdate(List<Salary> salariesToUpdate)
+        {
+            if (salariesToUpdate == null && !salariesToUpdate.Any())
+                return false;
+            
+                foreach (Salary model in salariesToUpdate)
+                {
+                    if(!model.Validate())
+                        continue;
+                    _dbSet.Attach(model);
+                    Update(model);
+                }
+            return true;
         }
     }
 

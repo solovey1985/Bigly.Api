@@ -52,7 +52,11 @@ namespace Bigly.DAL.Migrations.User
             {
                 DateTime since = DateTime.Now.AddMonths(-i-1);
                 DateTime till = DateTime.Now.AddMonths(-i);
-                Salary s = new Salary() {EmployeeId = employeeId, Id = employeeId*(i+2), Period = new PaymentPeriod() {Since = since, Till = till} };
+                Salary s = new Salary() {EmployeeId = employeeId,
+                    Id = employeeId*(i+2),
+                    Period = new PaymentPeriod() {Since = since, Till = till},
+                    PaidAmount =  employeeId*12000
+                };
                 salaries.Add(s);
             }
            return salaries;

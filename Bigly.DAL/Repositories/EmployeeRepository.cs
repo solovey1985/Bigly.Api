@@ -11,6 +11,9 @@ namespace Bigly.DAL.Repositories
 
     public class EmployeeRepository:Repository<Employee, EmployeeContext>, IEmployeeRepository
     {
-        
+        public override IEnumerable<Employee> GetAll()
+        {
+            return base.GetAll();
+        }
     }
 }

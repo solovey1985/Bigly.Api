@@ -20,7 +20,10 @@ namespace Bigly.Api.Services
 
         public void BatchUpdate(List<SalaryViewModel> salariesToUpdate)
         {
-            
+            if (salariesToUpdate != null && salariesToUpdate.Any())
+                _salaryRepository.BatchUpdate(salariesToUpdate.Select(vm => Mapper.Map<Salary>(vm)).ToList());
+
+
         }
 
         public IEnumerable<SalaryViewModel> GetAllWithEmployees()
