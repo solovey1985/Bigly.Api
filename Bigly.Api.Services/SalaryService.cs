@@ -26,6 +26,14 @@ namespace Bigly.Api.Services
 
         }
 
+        public IEnumerable<SalaryViewModel> BatchInsert(List<SalaryViewModel> salariesToUpdate)
+        {
+            if (salariesToUpdate != null && salariesToUpdate.Any())
+                _salaryRepository.BatchInsert(salariesToUpdate.Select(vm => Mapper.Map<Salary>(vm)).ToList());
+
+            return salariesToUpdate;
+        }
+
         public IEnumerable<SalaryViewModel> GetAllWithEmployees()
         {
             List<Salary> domainModels = _salaryRepository.GetAllWithEmployees().ToList();

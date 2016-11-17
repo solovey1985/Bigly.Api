@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\BaseContext.cs" />
+    <Compile Include="DAL\IContext.cs" />
     <Compile Include="DAL\ContextHelpers.cs" />
     <Compile Include="DAL\StateHelper.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />

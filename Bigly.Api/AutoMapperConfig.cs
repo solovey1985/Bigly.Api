@@ -25,7 +25,9 @@ namespace Bigly.Api
 
         protected override void Configure()
         {
-            CreateMap<SalaryViewModel, Salary>();
+            CreateMap<SalaryViewModel, Salary>()
+                .ForMember(dest=>dest.Period, opt=>opt.ResolveUsing(src=> new  PaymentPeriod(src.Since,src.Till)))
+                ;
                 
             CreateMap<Salary, SalaryViewModel>()
                     .ForMember(m => m.Since, opt => opt.MapFrom(x => x.Period.Since))

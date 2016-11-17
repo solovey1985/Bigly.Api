@@ -5,7 +5,7 @@ namespace Bigly.Infrastructure
 {
     public interface IUnitOfWork<TContext>:IDisposable where TContext:DbContext
     {
-        int Save();
+        bool Save();
         TContext Context { get; }
 
     }

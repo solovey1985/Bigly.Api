@@ -9,6 +9,15 @@ namespace Bigly.Domain.Models
 
         public DateTime Till { get; set; }
 
+        public PaymentPeriod()
+        {
+            
+        }
+        public PaymentPeriod(DateTime since, DateTime till)
+        {
+            Since = since;
+            Till = till;
+        }
         #region ValueObject
         public override bool Equals(PaymentPeriod other)
         {

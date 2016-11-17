@@ -1,24 +1,37 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Diagnostics;
 using Bigly.Infrastructure;
 using Bigly.Infrastructure.DAL;
 
 namespace Bigly.DAL.UnitsOfWork
 {
-    public abstract class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext:DbContext
+    public abstract class UnitOfWork<TContext> : IUnitOfWork<TContext>
+        where TContext : DbContext
     {
 
         public TContext Context => _context;
         private TContext _context;
+
         public UnitOfWork(TContext context)
         {
             _context = context;
-        } 
+        }
 
-        public int Save()
+        public bool Save()
         {
-            Context.ApplyStateChanges();
-            return Context.SaveChanges();
+            try
+            {
+                Context.ApplyStateChanges();
+                return Context.SaveChanges() > 0;
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+                Debug.WriteLine(exception.StackTrace);
+                return false;
+            }
+            
         }
 
         private bool disposed = false;

@@ -14,7 +14,7 @@ namespace Bigly.Api.Services
         void Update(SalaryViewModel salaryToUpdate);
         IEnumerable<SalaryViewModel> GetPerMonth();
         IEnumerable<SalaryViewModel> GetAllWithEmployees();
-
+        IEnumerable<SalaryViewModel> BatchInsert(List<SalaryViewModel> salariesToUpdate);
 
     }
 }

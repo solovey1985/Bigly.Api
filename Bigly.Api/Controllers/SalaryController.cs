@@ -40,7 +40,8 @@ namespace Bigly.Api.Controllers
 
         public IEnumerable<SalaryViewModel> Post([FromBody] List<SalaryViewModel> salariesToCreate)
         {
-            _salaryService.BatchUpdate(salariesToCreate);
+            _salaryService.BatchInsert(salariesToCreate);
+
             return salariesToCreate;
         }  
     }
