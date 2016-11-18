@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Bigly.DAL.Contexts;
@@ -8,7 +9,7 @@ using Bigly.Infrastructure;
 
 namespace Bigly.DAL.Repositories
 {
-    public interface ISalaryRepository: IRepository<Salary>
+    public interface ISalaryRepository: IRepository<Salary>, IDisposable
     {
         IEnumerable<Salary> GetAllWithEmployees();
     }

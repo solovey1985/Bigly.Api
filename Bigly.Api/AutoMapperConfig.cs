@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
+using Bigly.Api.ViewModels;
 using Bigly.Domain.Models;
 using Bigly.GUI.ViewModels;
 
@@ -14,12 +15,23 @@ namespace Bigly.Api
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.AddProfile<PaymentProfile>();
+                cfg.AddProfile<SalaryProfile>();
+                cfg.AddProfile<EmployeeProfile>();
              });
         }
     }
 
-    public class PaymentProfile : Profile
+    internal class EmployeeProfile:Profile {
+        protected override void Configure()
+        {
+            CreateMap<Employee, EmployeeViewModel>()
+                .ForMember(dest=>dest.Position, opt=>opt.MapFrom(src=>src.Rate.EmployeePosition));
+            CreateMap<EmployeeViewModel, Employee>()
+                ;
+        }
+    }
+
+    internal class SalaryProfile : Profile
     {
 
 

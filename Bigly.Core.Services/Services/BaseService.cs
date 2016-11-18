@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Driveme.Core.Services.Services
+namespace Bigly.Core.Services.Services
 {
     public abstract class BaseService<T>:IDisposable where T:class
     {

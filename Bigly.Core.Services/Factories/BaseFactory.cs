@@ -1,7 +1,7 @@
 ﻿using System;
 using Bigly.Infrastructure;
 
-namespace Driveme.Domain.Services.Factories
+namespace Bigly.Domain.Services.Factories
 {
     public interface IBaseFactory<TEntity> where TEntity : Entity, new()
     {
@@ -11,6 +11,11 @@ namespace Driveme.Domain.Services.Factories
 
     public class BaseFactory<T> : IBaseFactory<T> where T:Entity, new()
     {
+        public BaseFactory()
+        {
+            
+        }
+
        protected T entity;
         public virtual T Create()
         {

@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using Bigly.Api.Services.Interfaces;
 using Bigly.Api.ViewModels;
 using Bigly.DAL.Repositories;
 using Bigly.Domain.Models;
-using Driveme.Domain.Services.Factories;
+using Bigly.Domain.Services.Factories;
 
 namespace Bigly.Api.Services
 {
     public class EmployeeService:BaseApiService<Employee>, IEmployeeService
     {
-        EmployeeFactory employeeFactory;
-        public EmployeeService(BaseFactory<Employee> factory) : base(factory, new EmployeeRepository())
+        IEmpoyeeFactory _factory;
+        private IEmployeeRepository _repository;
+        public EmployeeService(IEmpoyeeFactory factory, IEmployeeRepository repository) : base(factory, repository)
         {
-            employeeFactory = new EmployeeFactory();
+            _factory = factory;
+            _repository = repository;
         }
 
         public IEnumerable<EmployeeViewModel> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll().Select(Mapper.Map<EmployeeViewModel>).ToArray();
         }
 
         public Employee GetById(int id)

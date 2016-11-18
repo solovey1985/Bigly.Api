@@ -13,6 +13,10 @@ namespace Bigly.Api.Controllers
     {
         private IEmployeeService _employeeService;
 
+        public EmployeeController()
+        {
+            
+        }
         public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;

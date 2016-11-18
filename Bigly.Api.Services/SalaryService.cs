@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
@@ -9,7 +10,7 @@ using Bigly.GUI.ViewModels;
 
 namespace Bigly.Api.Services
 {
-    public class SalaryService :BaseApiService<Salary>, ISalaryService
+    public class SalaryService :BaseApiService<Salary>, ISalaryService, IDisposable
     {
         private ISalaryRepository _salaryRepository;
 
@@ -60,5 +61,27 @@ namespace Bigly.Api.Services
             List<SalaryViewModel> salaries = _salaryRepository.GetAll().Select(Mapper.Map<SalaryViewModel>).ToList();
             return salaries;
         }
+        #region DISPOSE
+
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    _salaryRepository.Dispose();
+                }
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Bigly.Infrastructure;
 using Bigly.Infrastructure.DomainBase;
-using Driveme.Domain.Services.Factories;
+using Bigly.Domain.Services.Factories;
 
 namespace Bigly.Api.Services
 {
