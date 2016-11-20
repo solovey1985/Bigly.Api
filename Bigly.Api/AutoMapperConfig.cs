@@ -5,7 +5,6 @@ using System.Web;
 using AutoMapper;
 using Bigly.Api.ViewModels;
 using Bigly.Domain.Models;
-using Bigly.GUI.ViewModels;
 
 namespace Bigly.Api
 {

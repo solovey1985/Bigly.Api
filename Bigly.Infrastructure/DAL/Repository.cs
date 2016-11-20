@@ -132,7 +132,9 @@ namespace Bigly.Infrastructure
             {
                 if (disposing)
                 {
+                    if(_context!=null)
                     _context.Dispose();
+                    if(_unitOfWork!=null)
                     _unitOfWork.Dispose();
                 }
             }

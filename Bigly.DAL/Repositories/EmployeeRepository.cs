@@ -7,13 +7,16 @@ using Bigly.Infrastructure;
 
 namespace Bigly.DAL.Repositories
 {
-    public interface IEmployeeRepository : IRepository<Employee> {}
+    public interface IEmployeeRepository : IRepository<Employee> {
+        IEnumerable<Employee> GetAllWithRates();
+    }
 
     public class EmployeeRepository:Repository<Employee, EmployeeContext>, IEmployeeRepository
     {
-        public override IEnumerable<Employee> GetAll()
+       public EmployeeRepository(IEmployeeUnitOfWork unitOfWork) : base(unitOfWork) { }
+        public IEnumerable<Employee> GetAllWithRates()
         {
-            return base.GetAll();
+            return _dbSet.Include(e => e.Rate);
         }
     }
 }

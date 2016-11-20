@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bigly.Api.ViewModels.Base;
 
-namespace Bigly.GUI.ViewModels
+namespace Bigly.Api.ViewModels
 {
     public class SalaryViewModel:ViewModel
     {

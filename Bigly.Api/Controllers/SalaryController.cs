@@ -5,14 +5,14 @@ using System.Web;
 using System.Web.Http;
 using Bigly.Api.Services;
 using Bigly.Domain.Models;
-using Bigly.GUI.ViewModels;
+using Bigly.Api.ViewModels;
 
 namespace Bigly.Api.Controllers
 {
 
     public class SalaryController:ApiController
     {
-        private ISalaryService _salaryService;
+        private readonly ISalaryService _salaryService;
 
        
         public SalaryController(ISalaryService salaryService)

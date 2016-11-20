@@ -12,17 +12,16 @@ namespace Bigly.Api.Services
 {
     public class EmployeeService:BaseApiService<Employee>, IEmployeeService
     {
-        IEmpoyeeFactory _factory;
+       
         private IEmployeeRepository _repository;
-        public EmployeeService(IEmpoyeeFactory factory, IEmployeeRepository repository) : base(factory, repository)
+        public EmployeeService( IEmployeeRepository repository)
         {
-            _factory = factory;
-            _repository = repository;
+                _repository = repository;
         }
 
         public IEnumerable<EmployeeViewModel> GetAll()
         {
-            return _repository.GetAll().Select(Mapper.Map<EmployeeViewModel>).ToArray();
+            return _repository.GetAllWithRates().Select(Mapper.Map<EmployeeViewModel>).ToArray();
         }
 
         public Employee GetById(int id)

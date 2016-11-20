@@ -6,7 +6,7 @@ using AutoMapper;
 using Bigly.Api.Services;
 using Bigly.DAL.Repositories;
 using Bigly.Domain.Models;
-using Bigly.GUI.ViewModels;
+using Bigly.Api.ViewModels;
 
 namespace Bigly.Api.Services
 {
