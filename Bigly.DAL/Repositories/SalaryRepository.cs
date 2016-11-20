@@ -24,7 +24,7 @@ namespace Bigly.DAL.Repositories
 
         public IEnumerable<Salary> GetAllWithEmployees()
         {
-            return  _dbSet.Include(s => s.Employee).ToList();
+            return  _dbSet.Include(s => s.Employee).Include(s=>s.Employee.Rate).ToList();
         }
 
         public bool BatchUpdate(List<Salary> salariesToUpdate)

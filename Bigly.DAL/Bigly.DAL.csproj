@@ -58,6 +58,10 @@
     </Compile>
     <Compile Include="Migrations\SalaryConfiguration.cs" />
     <Compile Include="Migrations\EmployeeConfiguration.cs" />
+    <Compile Include="Migrations\Salary\201611201923345_AddRatetoContext.cs" />
+    <Compile Include="Migrations\Salary\201611201923345_AddRatetoContext.Designer.cs">
+      <DependentUpon>201611201923345_AddRatetoContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\SalaryRepository.cs" />
@@ -81,12 +85,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\Salary\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\Employee\201611132359265_Init.resx">
       <DependentUpon>201611132359265_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Salary\201611201923345_AddRatetoContext.resx">
+      <DependentUpon>201611201923345_AddRatetoContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

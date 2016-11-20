@@ -12,7 +12,7 @@ namespace Bigly.Api.ViewModels
         public int EmployeeId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string RatePosition { get; set; }
+        public string Position { get; set; }
         public decimal PaidAmount { get; set; }
         public DateTime Since { get; set; }
         public DateTime Till { get; set; }

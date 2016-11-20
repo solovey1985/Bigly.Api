@@ -3,9 +3,9 @@ using Bigly.DAL.Contexts;
 
 namespace Bigly.DAL.Migrations.Trip
 {
-    internal sealed class TripConfiguration : DbMigrationsConfiguration<SalaryContext>
+    internal sealed class SalaryConfiguration : DbMigrationsConfiguration<SalaryContext>
     {
-        public TripConfiguration()
+        public SalaryConfiguration()
         {
             AutomaticMigrationsEnabled = false;
             MigrationsDirectory = @"Migrations\Salary";

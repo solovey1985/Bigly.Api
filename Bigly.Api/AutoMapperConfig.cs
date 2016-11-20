@@ -38,6 +38,7 @@ namespace Bigly.Api
         {
             CreateMap<SalaryViewModel, Salary>()
                 .ForMember(dest=>dest.Period, opt=>opt.ResolveUsing(src=> new  PaymentPeriod(src.Since,src.Till)))
+
                 ;
                 
             CreateMap<Salary, SalaryViewModel>()
@@ -45,7 +46,7 @@ namespace Bigly.Api
                     .ForMember(m => m.Till, opt => opt.MapFrom(x => x.Period.Till))
                     .ForMember(m => m.FirstName, opt => opt.MapFrom(x => x.Employee.FirstName))
                     .ForMember(m => m.LastName, opt => opt.MapFrom(x => x.Employee.LastName))
-
+                    .ForMember(dest => dest.Position, opt=>opt.MapFrom(x=>x.Employee.Rate.EmployeePosition))
                     ;
         }
     }
